@@ -1,0 +1,62 @@
+/********************************************
+----------------- PAGE ACCUEIL --------------
+********************************************/
+
+.firstPage {
+    background-image: url(/images/BACKGROUND_LANDING.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.titre {
+    width: 100%;
+    margin-top: 75px;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.75rem;
+}
+
+.firstPartTitle {
+    
+    color: #C48B6B;
+    text-shadow: 1px 1px 5px #C48B6B;
+}
+
+.secondPartTitle {
+    text-shadow: 1px 2px 5px #C48B6B;
+}
+
+.blob {
+    background-image: url(/images/blob.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 46vh;
+    width: 100vw;
+    position: absolute;
+    align-self: flex-end;
+}
+
+.appareil {
+    z-index: 1;
+    align-self: flex-end;
+    margin-top: 300px;
+    margin-left: 140px;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    align-self: flex-end;
+    margin-bottom: 59px;
+}
+
+.cours, .tech {
+    margin-right: 29px;
+}

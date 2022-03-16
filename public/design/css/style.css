@@ -1,0 +1,81 @@
+/********************************************
+------- INITIALISATION DU PROJET ------------
+********************************************/
+@import url("https://fonts.googleapis.com/css2?family=Dancing Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta Vaani&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open Sans&display=swap");
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/********************************************
+-------- IMPORT DES FICHIER SCSS ------------
+********************************************/
+/********************************************
+----------------- PAGE ACCUEIL --------------
+********************************************/
+.firstPage {
+  background-image: url(/images/BACKGROUND_LANDING.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titre {
+  width: 100%;
+  margin-top: 75px;
+  text-align: center;
+  font-weight: lighter;
+  font-family: "Dancing Script", cursive;
+  font-size: 3.75rem;
+}
+
+.firstPartTitle {
+  color: #C48B6B;
+  text-shadow: 1px 1px 5px #C48B6B;
+}
+
+.secondPartTitle {
+  text-shadow: 1px 2px 5px #C48B6B;
+}
+
+.blob {
+  background-image: url(/images/blob.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 46vh;
+  width: 100vw;
+  position: absolute;
+  align-self: flex-end;
+}
+
+.appareil {
+  z-index: 1;
+  align-self: flex-end;
+  margin-top: 300px;
+  margin-left: 140px;
+}
+
+.button {
+  width: 100%;
+  text-align: center;
+  /* width: 428px;
+  justify-content: center; */
+  z-index: 1;
+  align-self: flex-end;
+  margin-bottom: 59px;
+}
+
+.cours, .tech {
+  margin-right: 29px;
+}
+
+/*# sourceMappingURL=style.css.map */
