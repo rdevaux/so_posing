@@ -1,0 +1,10 @@
+{
+    "db" : {
+        "socketPath" : "/Applications/MAMP/tmp/mysql/mysql.sock",
+        "host" : "localhost",
+        "database" : "sopos",
+        "user" : "root",
+        "password" : "root"
+    },
+    "port" : 3000
+}
