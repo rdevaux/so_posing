@@ -4,6 +4,7 @@
 
 const express = require('express');
 const twig = require('twig');
+const categoriesController = require('../controllers/categories.controller');
 
 /***********************
  * VARIABLES GLOBALES  *
@@ -16,9 +17,7 @@ const routeur = express.Router();
 ************************/
 
 // Page d'accueil
-routeur.get('/', (requete, reponse) => {
-    reponse.render('categories/categories.html.twig')
-})
+routeur.get('/', categoriesController.affichage_categories)
 
 /***********************
  *        EXPORTS      *
