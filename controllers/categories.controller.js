@@ -2,7 +2,7 @@
  * IMPORT DES MODULES *
 ************************/
 
-const config = require('../public/config.json');
+const config = require('../config.json');
 const twig = require('twig');
 const bdd = require('../connexion_sql');
 

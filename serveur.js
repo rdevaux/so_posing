@@ -4,7 +4,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
-const config = require('./public/config.json');
+const config = require('./config.json');
 const routeurCategories = require('./routeurs/categories.routeurs');
 const routeurGlobal = require('./routeurs/global.routeurs');
 

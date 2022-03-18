@@ -3,7 +3,7 @@
 ************************/
 
 const mysql = require('promise-mysql');
-const config = require('./public/config.json');
+const config = require('./config.json');
 
 /***********************
  * CONNEXION À LA BDD  *
