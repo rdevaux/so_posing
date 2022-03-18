@@ -10,7 +10,10 @@ let Categories = class {
 
     static getCategories() {
         return new Promise(next => {
-            db.query('')
+            db.query('SELECT * FROM `categorie`')
+                .then(result => next(result))
+                .catch(error => next(error))
         })
     }
+
 }
