@@ -10,16 +10,17 @@ const bdd = require('../connexion_sql');
  *  EXPORT FONCTIONS   *
 ************************/
 
-bdd.connexion.then(database => {
-    console.log('Connected')
-    let Categories = require('../models/categories.model')(database, config);
+exports.affichage_categories = async (requete, reponse) => {
+    bdd.connexion.then(async db => {
+        console.log('Connected')
 
-    exports.affichage_categories = async (requete, reponse) => {
+        let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
+    
         reponse.render('categories/categories.html.twig', {listeCategories})
-    }
-})
-.catch(error => {
-    console.log(error);
-    console.log('Error during connection database');
-})
+    })
+    .catch(error => {
+        console.log(error);
+        console.log('Error during connection database');
+    })
+}
