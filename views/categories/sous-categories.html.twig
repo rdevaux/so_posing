@@ -7,11 +7,13 @@
     <h2>{{nomCategorie.nom_categorie}}</h2>
 
 	{% for sous_categorie in listeSousCategories %}
+	<a href="/photos/">
 		<div class="categorie">
 			<h2>{{sous_categorie.nom_sous_categorie}}</h2>
 			<p>105 photos</p>
 			<div class="overlay"></div>
 		</div>
+	</a>
 	{% endfor %}
 
 {% endblock %}
