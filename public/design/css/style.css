@@ -9,8 +9,7 @@
 *, ::before, ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /********************************************
 -------- IMPORT DES FICHIER SCSS ------------
@@ -26,26 +25,22 @@
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .titre {
   width: 100%;
   margin-top: 75px;
   text-align: center;
   font-weight: lighter;
-  font-family: "Dancing Script", cursive;
-  font-size: 3.75rem;
-}
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.75rem; }
 
 .firstPartTitle {
   color: #C48B6B;
-  text-shadow: 1px 1px 5px #C48B6B;
-}
+  text-shadow: 1px 1px 5px #C48B6B; }
 
 .secondPartTitle {
-  text-shadow: 1px 2px 5px #C48B6B;
-}
+  text-shadow: 1px 2px 5px #C48B6B; }
 
 .blob {
   background-image: url(/images/blob.png);
@@ -54,44 +49,37 @@
   height: 46vh;
   width: 100vw;
   position: absolute;
-  align-self: flex-end;
-}
+  align-self: flex-end; }
 
 .appareil {
   z-index: 1;
   align-self: flex-end;
   margin-top: 300px;
-  margin-left: 140px;
-}
+  margin-left: 140px; }
 
 .button {
   width: 100%;
   text-align: center;
   z-index: 1;
   align-self: flex-end;
-  margin-bottom: 59px;
-}
+  margin-bottom: 59px; }
 
 .cours, .tech {
-  margin-right: 29px;
-}
+  margin-right: 29px; }
 
 .header {
   height: 70px;
-  background-color: #F3E9DC;
-}
-.header h1 {
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  font-size: 20px;
-  color: #473229;
-  font-weight: bold;
-  padding-top: 22px;
-}
-.header img {
-  position: absolute;
-  padding: 22px 0 0 40px;
-}
+  background-color: #F3E9DC; }
+  .header h1 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: #473229;
+    font-weight: bold;
+    padding-top: 22px; }
+  .header img {
+    position: absolute;
+    padding: 22px 0 0 40px; }
 
 .categorie {
   height: 170px;
@@ -101,39 +89,94 @@
   border-top: 1px solid white;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.categorie h2 {
-  display: block;
-  position: absolute;
-  font-family: "Dancing Script", cursive;
-  font-size: 43px;
-  text-transform: capitalize;
-  color: white;
-  font-weight: 100;
-  width: 100%;
-  text-align: center;
-  z-index: 1;
-}
-.categorie p {
-  font-family: "Mukta Vaani", sans-serif;
-  font-size: 20px;
-  font-weight: 100;
-  color: white;
-  padding-top: 100px;
-  position: absolute;
-  z-index: 1;
-}
-.categorie .overlay {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-}
+  align-items: center; }
+  .categorie h2 {
+    display: block;
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    font-size: 43px;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    z-index: 1; }
+  .categorie p {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+    padding-top: 100px;
+    position: absolute;
+    z-index: 1; }
+  .categorie .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5; }
 
 .photos {
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
+
+.scroll-toggle {
+  position: fixed;
+  top: 70px;
+  z-index: 2;
+  align-items: center;
+  background-color: white;
+  border: 1px solid white;
+  height: 58px;
+  /* margin-bottom: -7px; */
+  display: flex;
+  max-width: 680px;
+  justify-content: center;
+  width: 100%; }
+
+.list {
+  padding-bottom: 0px;
+  display: flex;
+  flex: 1 1 auto;
+  overflow-x: scroll;
+  width: 300px;
+  /* overflow-y: scroll; */ }
+
+.list-item {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 86px;
+  padding: 19px 10px 15px 10px;
+  color: #473229;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600; }
+
+.list-item:hover {
+  border-bottom: 7px solid #C48B6B;
+  color: #C48B6B; }
+
+ul {
+  list-style-type: none; }
+
+.navbar-bottom {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+  background-color: #F3E9DC;
+  padding-top: 20px;
+  z-index: 2; }
+
+.monte {
+  position: relative;
+  bottom: 52px;
+  z-index: 2; }
+
+.bloc-bas {
+  width: 100%;
+  height: 80px; }
 
 /*# sourceMappingURL=style.css.map */
