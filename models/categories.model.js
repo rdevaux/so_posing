@@ -16,4 +16,21 @@ let Categories = class {
         })
     }
 
+    //requete permettant d'acceder aux sous categories
+
+    static getSousCategories(id) {
+        return new Promise(next => {
+            db.query('SELECT * FROM `sous_categorie` WHERE `id_categorie`= ?',[id])
+                .then(result => {  if (result[0] != undefined) next(result)})
+                .catch(error => next(error))
+        })
+    }
+    static getNomCategorie(id){
+        return new Promise(next => {
+            db.query('SELECT `nom_categorie` FROM `categorie` WHERE `id_categorie`=?',[id])
+            .then(result => next(result))
+            .catch(error => next(error))
+        })
+    }
+
 }

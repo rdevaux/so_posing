@@ -2,11 +2,15 @@
 
 {% block content %}
 
-	{% include "../header.html.twig" with {'title': 'Catégories'} %}
 
-	{% for categorie in listeCategories %}
+{% include "../header.html.twig" with {'title':  } %}	
+{% for categorie in nomCategorie %}
+	<h2>{{categorie.nom_categorie}}</h2>
+{% endfor %}
+
+	{% for sous_categorie in listeSousCategories %}
 		<div class="categorie">
-			<h2>{{categorie.nom_categorie}}</h2>
+			<h2>{{sous_categorie.nom_sous_categorie}}</h2>
 			<p>105 photos</p>
 			<div class="overlay"></div>
 		</div>

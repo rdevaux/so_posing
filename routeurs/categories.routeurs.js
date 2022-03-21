@@ -16,8 +16,12 @@ const routeur = express.Router();
  *       ROUTAGE       *
 ************************/
 
-// Page d'accueil
+// Page des catégories
 routeur.get('/', categoriesController.affichage_categories)
+// Page des sous catégories
+routeur.get('/:id', categoriesController.affichage_sous_categories)
+
+
 
 /***********************
  *        EXPORTS      *
