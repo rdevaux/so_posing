@@ -2,11 +2,9 @@
 
 {% block content %}
 
+{% include "../header.html.twig" with {'title': nomCategorie } %}
 
-{% include "../header.html.twig" with {'title':  } %}	
-{% for categorie in nomCategorie %}
-	<h2>{{categorie.nom_categorie}}</h2>
-{% endfor %}
+    <h2>{{nomCategorie.nom_categorie}}</h2>
 
 	{% for sous_categorie in listeSousCategories %}
 		<div class="categorie">

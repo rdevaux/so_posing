@@ -17,6 +17,7 @@ exports.affichage_categories = async (requete, reponse) => {
         let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
     
+        console.log(listeCategories)
         reponse.render('categories/categories.html.twig', {listeCategories})
     })
     .catch(error => {
@@ -33,10 +34,9 @@ exports.affichage_sous_categories = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let listeSousCategories = await Categories.getSousCategories(requete.params.id);
-        let nomCategorie = await Categories.getNomCategorie(requete.params.id);
+        let nomCategorie = await Categories.getNomCategorie(requete.params.id)
         
-        console.log(nomCategorie[0].nom_categorie)
-        reponse.render('categories/sous-categories.html.twig', {listeSousCategories, nomCategorie})
+        reponse.render('categories/sous-categories.html.twig', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
     })
     .catch(error => {
         console.log(error);

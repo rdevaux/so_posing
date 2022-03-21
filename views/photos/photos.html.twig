@@ -1,0 +1,17 @@
+{% extends "../base.html.twig" %}
+
+{% block content %}
+
+    {# Header #}
+	{% include "../header.html.twig" with {'title': 'A CHANGER'} %}
+
+	{# ScrollBar Horizontale (Filtre) #}
+
+    {# Liste des photos #}
+    {% for photo in listePhotos %}
+        <img src="data:image/png;base64,{{photo.photo_pose}}" class="photos" />
+    {% endfor %}
+
+    {# Footer #}
+
+{% endblock %}
