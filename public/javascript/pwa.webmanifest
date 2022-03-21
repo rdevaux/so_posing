@@ -1,0 +1,17 @@
+{
+    "name": "Progressive Web App SO POSING",
+    "short_name": "soposing",
+    "description": "Assistant Photo",
+    "icons": [
+        {
+            "src": "/images/splash-screen.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+}
