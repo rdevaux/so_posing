@@ -5,7 +5,7 @@
 const express = require('express');
 const twig = require('twig');
 const photosController = require('../controllers/photos.controller')
-
+const filtreController = require('../controllers/filtres.controller')
 /***********************
  * VARIABLES GLOBALES  *
 ************************/
@@ -16,8 +16,8 @@ const routeur = express.Router();
  *       ROUTAGE       *
 ************************/
 
-// Affichage des photos
-routeur.get('/:id', photosController.affichage_photos)
+// Affichage des filtres
+routeur.get('/:id', filtreController.affichage_filtres)
 
 /***********************
  *        EXPORTS      *

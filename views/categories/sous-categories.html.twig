@@ -7,7 +7,7 @@
     <h2>{{nomCategorie.nom_categorie}}</h2>
 
 	{% for sous_categorie in listeSousCategories %}
-	<a href="/photos/">
+	<a href="/photos/{{sous_categorie.id_sous_categorie}}">
 		<div class="categorie">
 			<h2>{{sous_categorie.nom_sous_categorie}}</h2>
 			<p>105 photos</p>
