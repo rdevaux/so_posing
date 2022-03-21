@@ -10,6 +10,8 @@ const bdd = require('../connexion_sql');
  *  EXPORT FONCTIONS   *
 ************************/
 
+// Affichage Categorie
+
 exports.affichage_categories = async (requete, reponse) => {
     bdd.connexion.then(async db => {
         console.log('Connected')
