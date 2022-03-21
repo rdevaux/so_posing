@@ -17,7 +17,7 @@ const routeur = express.Router();
 ************************/
 
 // Affichage des photos
-routeur.get('/', photosController.affichage_photos)
+routeur.get('/:id', photosController.affichage_photos)
 
 /***********************
  *        EXPORTS      *

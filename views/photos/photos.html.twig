@@ -2,48 +2,43 @@
 
 {% block content %}
 
-    {# Header #}
+	{# Header #}
 	{% include "../header.html.twig" with {'title': 'A CHANGER'} %}
 
 	{# ScrollBar Horizontale (Filtre) #}
 
-        <div class="scroll-toggle">
-            <ul class="list">
-                <li class="list-item">Blanc</li>
-                <li class="list-item">Rouge</li>
-                <li class="list-item">Assise</li>
-                <li class="list-item">Dos</li>
-                <li class="list-item">Face</li>
-                <li class="list-item">Truc</li>
-                <li class="list-item">Bidule</li>
-                <li class="list-item">Machin</li>
-                <li class="list-item">Chose</li>
-                <li class="list-item">Widget</li>
-                <li class="list-item">Item #11</li>
-                <li class="list-item">Item #12</li>
-                <li class="list-item">Item #13</li>
-                <li class="list-item">Item #14</li>
-                <li class="list-item">Item #15</li>
-                <li class="list-item">Item #16</li>
-                <li class="list-item">Item #17</li>
-                <li class="list-item">Item #18</li>
-                <li class="list-item">Item #19</li>
-                <li class="list-item">Item #20</li>
-            </ul>
-        </div>
+	<div class="scroll-toggle">
+		<ul class="list">
+			<li class="list-item">Blanc</li>
+			{% for filtre in listeFiltre %}
+				<li class='list-item'>{{filtre.nom_filtre}}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 
-    {# Liste des photos #}
-    {% for photo in listePhotos %}
-        <img src="data:image/png;base64,{{photo.photo_pose}}" class="photos" />
-    {% endfor %}
+	{# Liste des photos #}
+	{% for photo in listePhotos %}
+		<img src="data:image/png;base64,{{photo.photo_pose}}" class="photos"/>
+	{% endfor %}
 
-    {# Footer #}
-    <ul class="navbar-bottom">
-        <li><a href=""><img src="/images/clarity_home-line.png" alt=""></a></li>
-        <li><a href=""><img src="/images/clarity_search-line.png" alt=""></a></li>
-        <li class="monte"><a href=""><img src="/images/BOUTON_AJOUT_PHOTO.png" alt=""></a></li>
-        <li><a href=""><img src="/images/MENU_COMMENTAIRE.png" alt=""></a></li>
-        <li><a href=""><img src="/images/MENU_FAVORIS.png" alt=""></a></li>
-    </ul>
+	{# Footer #}
+	<ul class="navbar-bottom">
+		<li>
+			<a href=""><img src="/images/clarity_home-line.png" alt=""></a>
+		</li>
+		<li>
+			<a href=""><img src="/images/clarity_search-line.png" alt=""></a>
+		</li>
+		<li class="monte">
+			<a href=""><img src="/images/BOUTON_AJOUT_PHOTO.png" alt=""></a>
+		</li>
+		<li>
+			<a href=""><img src="/images/MENU_COMMENTAIRE.png" alt=""></a>
+		</li>
+		<li>
+			<a href=""><img src="/images/MENU_FAVORIS.png" alt=""></a>
+		</li>
+	</ul>
 
 {% endblock %}
