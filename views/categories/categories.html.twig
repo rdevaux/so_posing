@@ -1,13 +1,15 @@
-{% extends "../header.html.twig" %}
-{% block title %}Catégories{% endblock %}
+{% extends "../base.html.twig" %}
+
 {% block content %}
 
+	{% include "../header.html.twig" with {'title': 'Catégories'} %}
+
 	{% for categorie in listeCategories %}
-        <div class="categorie">
-            <h2>{{categorie.nom_categorie}}</h2>
-            <p>105 photos</p>
-            <div class="overlay"></div>
-        </div>
-    {% endfor %}
+		<div class="categorie">
+			<h2>{{categorie.nom_categorie}}</h2>
+			<p>105 photos</p>
+			<div class="overlay"></div>
+		</div>
+	{% endfor %}
 
 {% endblock %}

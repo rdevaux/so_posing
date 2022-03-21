@@ -1,4 +1,4 @@
-.categorie{
+.categorie {
     height: 170px;
     background-image: url(/images/mariage.png);
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 
-    h2{
+    h2 {
         display: block;
         position: absolute;
         font-family: 'Dancing Script', cursive;
@@ -31,11 +31,10 @@
         z-index: 1;
     }
 
-    .overlay{
+    .overlay {
         width: 100%;
         height: 100%;
         background-color: black;
         opacity: .5;
-        /* position: absolute; */
     }
 }
