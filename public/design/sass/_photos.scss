@@ -20,6 +20,7 @@
 }
 
 .list {
+    
     padding-bottom: 0px;
     display: flex;
     flex: 1 1 auto;
@@ -48,6 +49,21 @@
 ul {
     list-style-type: none;
 }
+
+// a {
+//     color: #473229;
+//     outline: none;
+//     text-decoration: none;
+
+//     :active{
+//         color: #C48B6B;
+//         text-decoration: none;
+//     }
+
+//     :hover{
+//         color: #C48B6B;
+//     }
+// }
 
 .navbar-bottom{
     position: fixed;
