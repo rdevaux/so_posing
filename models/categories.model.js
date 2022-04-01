@@ -32,7 +32,17 @@ let Categories = class {
 
     static getNomCategorie(id) {
         return new Promise(next => {
-            db.query('SELECT `nom_categorie` FROM `categorie` WHERE `id_categorie` = ?',[id])
+            db.query('SELECT `nom_categorie` FROM `categorie` WHERE `id_categorie` = ?', [id])
+            .then(result => next(result))
+            .catch(error => next(error))
+        })
+    }
+
+    // Requête récupérant le nom de la sous catégorie en fonction d'un ID sous-catégorie
+
+    static getNomSousCategorie(id) {
+        return new Promise(next => {
+            db.query('SELECT `nom_sous_categorie` FROM `sous_categorie` WHERE `id_sous_categorie` = ?', [id])
             .then(result => next(result))
             .catch(error => next(error))
         })
