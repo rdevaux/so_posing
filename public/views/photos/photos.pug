@@ -1,0 +1,36 @@
+extends ../base.pug
+
+block content
+
+    - var title = "A CHANGER";
+
+    include ../header.pug
+
+    // ScrollBar Horizontal des filtres
+    .scroll-toggle 
+        ul.list
+            each filtre in listeFiltre
+                li.list-item #{filtre.nom_filtre}
+
+    //- // Affichages des photos
+    //- each photo in listePhotos
+    //-     img.photos(src="data:image/png;base64,#{photo.photo_pose}")
+
+
+    // Menu du bas de page
+    ul.navbar-bottom
+        li
+            a(href="")
+                img(src="/images/clarity_home-line.png")
+        li
+            a(href="")
+                img(src="/images/clarity_search-line.png")
+        li.monte
+            a(href="")
+                img(src="/images/BOUTON_AJOUT_PHOTO.png")
+        li
+            a(href="")
+                img(src="/images/MENU_COMMENTAIRE.png")
+        li
+            a(href="")
+                img(src="/images/MENU_FAVORIS.png")

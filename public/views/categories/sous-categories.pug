@@ -1,0 +1,15 @@
+extends ../base.pug
+
+block content
+
+	- var title = nomCategorie;
+
+	include ../header.pug
+
+	each sous_categorie in listeSousCategories
+
+		a(href="/photos/" + sous_categorie.id_sous_categorie)
+			.categorie
+				h2 #{sous_categorie.nom_sous_categorie}
+				p 105 photos
+				.overlay

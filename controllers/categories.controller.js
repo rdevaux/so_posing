@@ -3,7 +3,6 @@
 ************************/
 
 const config = require('../config.json');
-const twig = require('twig');
 const bdd = require('../connexion_sql');
 
 /***********************
@@ -19,7 +18,7 @@ exports.affichage_categories = async (requete, reponse) => {
         let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
     
-        reponse.render('categories/categories.html.twig', {listeCategories})
+        reponse.render('categories/categories.pug', {listeCategories})
     })
     .catch(error => {
         console.log(error);
@@ -37,7 +36,7 @@ exports.affichage_sous_categories = async (requete, reponse) => {
         let listeSousCategories = await Categories.getSousCategories(requete.params.id);
         let nomCategorie = await Categories.getNomCategorie(requete.params.id)
         
-        reponse.render('categories/sous-categories.html.twig', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
+        reponse.render('categories/sous-categories.pug', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
     })
     .catch(error => {
         console.log(error);

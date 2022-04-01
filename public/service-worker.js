@@ -1,7 +1,10 @@
 const CACHE_NAME = 'sw-cache-example';
 const toCache = [
-    '/views/**/*.html.twig',
-    '/public/javascript/status.js',
+    'views/accueil/accueil.pug',
+    'views/categories/categories.pug',
+    'views/categories/sous-categories.pug',
+    'views/photos/photos.pug',
+    'javascript/status.js',
 ];
 
 self.addEventListener('install', function (event) {

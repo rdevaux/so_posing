@@ -3,7 +3,6 @@
 ************************/
 
 const config = require('../config.json');
-const twig = require('twig');
 const bdd = require('../connexion_sql');
 
 /***********************
@@ -17,7 +16,7 @@ exports.affichage_photos = async (requete, reponse) => {
         let Photos = require('../models/photos.model')(db, config);
         let listePhotos = await Photos.getPhotosByFilter(requete.params.id);
 
-        reponse.render('photos/photos.html.twig', { listePhotos })
+        reponse.render('photos/photos.pug', { listePhotos })
     })
         .catch(error => {
             console.log(error);

@@ -3,7 +3,6 @@
 ************************/
 
 const express = require('express');
-const twig = require('twig');
 
 /***********************
  * VARIABLES GLOBALES  *
@@ -17,7 +16,7 @@ const routeur = express.Router();
 
 // Page d'accueil
 routeur.get('/', (requete, reponse) => {
-    reponse.render('accueil/accueil.html.twig')
+    reponse.render('accueil/accueil.pug')
 })
 
 // Gestion de l'erreur 404

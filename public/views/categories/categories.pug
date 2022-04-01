@@ -1,0 +1,18 @@
+extends ../base.pug
+
+block content
+
+	- var title = "Catégories";
+
+	include ../header.pug
+
+	each categorie in listeCategories
+
+		a(href="/categories/" + categorie.id_categorie)
+			.categorie
+				h2 #{categorie.nom_categorie}
+				p 105 photos
+				.overlay
+
+
+

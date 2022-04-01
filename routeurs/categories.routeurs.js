@@ -3,7 +3,6 @@
 ************************/
 
 const express = require('express');
-const twig = require('twig');
 const categoriesController = require('../controllers/categories.controller');
 
 /***********************
@@ -18,10 +17,9 @@ const routeur = express.Router();
 
 // Page des catégories
 routeur.get('/', categoriesController.affichage_categories)
+
 // Page des sous catégories
 routeur.get('/:id', categoriesController.affichage_sous_categories)
-
-
 
 /***********************
  *        EXPORTS      *
