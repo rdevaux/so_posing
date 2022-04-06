@@ -1,0 +1,37 @@
+
+        //* --- Sous Catégorie
+
+        let sous_categorie1 = {
+            nom_sous_categorie : 'Préparatif',
+            photo_sous_categorie : IMAGE,
+            id_categorie : 1
+        }
+        insertSouSCategorie(db, sous_categorie1);
+
+        let sous_categorie2 = {
+            nom_sous_categorie : 'Mairie',
+            photo_sous_categorie : IMAGE,
+            id_categorie : 1
+        }
+        insertSouSCategorie(db, sous_categorie2);
+
+        let sous_categorie3 = {
+            nom_sous_categorie : 'Eglise',
+            photo_sous_categorie : IMAGE,
+            id_categorie : 1
+        }
+        insertSouSCategorie(db, sous_categorie3);
+
+        let sous_categorie4 = {
+            nom_sous_categorie : "Vin d'honneur",
+            photo_sous_categorie : IMAGE,
+            id_categorie : 1
+        }
+        insertSouSCategorie(db, sous_categorie4);
+
+        let sous_categorie5 = {
+            nom_sous_categorie : "Vin d'honneur",
+            photo_sous_categorie : IMAGE,
+            id_categorie : 1
+        }
+        insertSouSCategorie(db, sous_categorie5);
