@@ -18,9 +18,19 @@ let Categories = class {
         })
     }
 
+    // Requête récupérant la liste des sous-catégories
+
+    static getSousCategories() {
+        return new Promise (next => {
+            db.query('SELECT * FROM `sous_categorie`')
+            .then(result => next(result))
+            .catch(error => next(error))
+        })
+    }
+
     // Requête récupérant la liste des sous-catégories en fonction d'un ID catégorie
 
-    static getSousCategories(id) {
+    static getSousCategoriesById(id) {
         return new Promise(next => {
             db.query('SELECT * FROM `sous_categorie` WHERE `id_categorie` = ?',[id])
                 .then(result => {  if (result[0] != undefined) next(result)})

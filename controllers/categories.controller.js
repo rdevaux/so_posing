@@ -17,6 +17,7 @@ exports.affichage_categories = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
+        console.log(listeCategories)
     
         reponse.render('categories/categories.pug', {listeCategories})
     })
@@ -33,7 +34,7 @@ exports.affichage_sous_categories = async (requete, reponse) => {
         console.log('Connected')
 
         let Categories = require('../models/categories.model')(db, config);
-        let listeSousCategories = await Categories.getSousCategories(requete.params.id);
+        let listeSousCategories = await Categories.getSousCategoriesById(requete.params.id);
         let nomCategorie = await Categories.getNomCategorie(requete.params.id)
         
         reponse.render('categories/sous-categories.pug', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})

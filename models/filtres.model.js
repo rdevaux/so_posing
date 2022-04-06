@@ -8,8 +8,16 @@ module.exports = (_db, _config) => {
 
 let Filtres = class {
 
+    static getAll() {
+        return new Promise (next => {
+            db.query('SELECT * FROM `filtre`')
+            .then(result => next(result))
+            .catch(error => next(error))
+        })
+    }
+
     static getFiltre(id){
-        return new Promise (next =>{
+        return new Promise (next => {
             db.query('SELECT * FROM `filtre` WHERE `id_sous_categorie`= ?', [id])
             .then(result => next(result))
             .catch(error => next(error))

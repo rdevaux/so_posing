@@ -3,6 +3,7 @@
 ************************/
 
 const express = require('express');
+const synchronisationController = require('../controllers/synchronisation.controller')
 
 /***********************
  * VARIABLES GLOBALES  *
@@ -14,8 +15,11 @@ const routeur = express.Router();
  *       ROUTAGE       *
 ************************/
 
+// Page Synchronisation
+routeur.get('/', synchronisationController.synchronisation_bdd)
+
 // Page d'accueil
-routeur.get('/', (requete, reponse) => {
+routeur.get('/accueil', (requete, reponse) => {
     reponse.render('accueil/accueil.pug')
 })
 
