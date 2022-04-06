@@ -27,7 +27,6 @@ exports.synchronisation_bdd = async (requete, reponse) => {
         console.log(listeSousCategories);
         console.log(listeFiltres);
         console.log(listePhotos);
-        console.log('test')
 
         reponse.render('synchronisation/synchronisation.pug')
     })

@@ -20,7 +20,7 @@ const routeur = express.Router();
 routeur.get('/:id', filtreController.affichage_filtres)
 
 // Affichage des photos
-routeur.get('/:id', photosController.affichage_photos)
+routeur.post('/:id', photosController.affichage_photos)
 
 /***********************
  *        EXPORTS      *

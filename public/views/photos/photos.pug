@@ -7,14 +7,22 @@ block content
     include ../header.pug
 
     // ScrollBar Horizontal des filtres
-    .scroll-toggle 
-        ul.list
-            each filtre in listeFiltre
-                li.list-item #{filtre.nom_filtre}
-
+    //- .scroll-toggle 
+    //-     ul.list
+    //-         form(method="post") 
+    //-             each filtre in listeFiltre
+    //-                 input(type="hidden" value=filtre.id_filtre)
+    //-                 button(type="submit" class="form-btn")
+    //-                     li.list-item #{filtre.nom_filtre}
     //- // Affichages des photos
     //- each photo in listePhotos
     //-     img.photos(src="data:image/png;base64,#{photo.photo_pose}")
+    //- input pour recuperer l'id du filtre en hidden
+
+    .scroll-toggle 
+        ul#listeFiltre
+            each filtre in listeFiltre
+                li#{filtre.nom_filtre} #{filtre.nom_filtre}
 
 
     // Menu du bas de page
@@ -34,3 +42,10 @@ block content
         li
             a(href="")
                 img(src="/images/MENU_FAVORIS.png")
+
+    script.
+        const btn = document.querySelector('.form-btn')
+        
+        btn.addEventListener('click', (event) => {
+            event.preventDefault()
+        })
