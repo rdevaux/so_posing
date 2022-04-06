@@ -12,10 +12,11 @@ const bdd = require('../connexion_sql');
 exports.affichage_photos = async (requete, reponse) => {
     bdd.connexion.then(async db => {
         console.log('Connected')
-
+console.log(requete.body.id)
         let Photos = require('../models/photos.model')(db, config);
-        let listePhotos = await Photos.getPhotosByFilter(requete.params.id);
-
+        let listePhotos = await Photos.getPhotosByFilter(requete.body.id);
+        console.log('trace')
+        
         reponse.render('photos/photos.pug', { listePhotos })
     })
         .catch(error => {
