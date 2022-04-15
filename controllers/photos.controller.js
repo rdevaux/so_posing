@@ -20,11 +20,18 @@ exports.affichage_photos = async (requete, reponse) => {
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
-        let listePhotos = await Photos.getPhotosByFilter(requete.body.id);
+        let listePhotosBD = await Photos.getPhotosByFilter(requete.body.id);
+        let listeBuff = [];
+        console.log(listePhotosBD[0].photo_pose)
+        for (let i = 0; i < listePhotosBD.length; i++) {
+            let img = Buffer.from(listePhotosBD[i].photo_pose).toString('base64');
+            listeBuff.push(img);
+            
+        }
+        console.log(listeBuff)
+                reponse.render('photos/photos.pug', {listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, listeBuff })
 
-        console.log(listePhotos[0].photo_pose)
-        let img = Buffer.from(listePhotos[0].photo_pose).toString('base64');
-        reponse.render('photos/photos.pug', { listePhotos, listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, img })
+        
     })
         .catch(error => {
             console.log(error);

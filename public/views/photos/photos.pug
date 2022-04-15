@@ -15,10 +15,10 @@ block content
                     button(type="submit" class="form-btn")
                         li.list-item #{filtre.nom_filtre}
     // Affichages des photos
-    if listePhotos
-        each photo in listePhotos
-            img.photos(src="data:image/png;base64," + photo.photo_pose)
-            img.photos(src="data:image/png;base64," + img)
+    if listeBuff
+        each photo in listeBuff
+            //- img.photos(src="data:image/png;base64," + photo.photo_pose)
+            img.photos(src="data:image/png;base64," + photo)
 
 
 
