@@ -28,7 +28,7 @@ routeur.post('/:id', photosController.affichage_photos)
 routeur.get('/:id/ajout_photo', photosController.affichage_ajout_photo)
 
 // Ajout d'une photo
-routeur.post('/:id/ajout_photo', upload.single("pose"), photosController.ajout_photo)
+routeur.post('/:id/ajout_photo', upload.single("photo"), photosController.ajout_photo)
 
 /***********************
  *        EXPORTS      *

@@ -28,7 +28,7 @@ exports.affichage_photos = async (requete, reponse) => {
             listeBuff.push(img);
         }
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, listeBuff })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, listeBuff })
     })
         .catch(error => {
             console.log(error);
@@ -48,8 +48,9 @@ exports.affichage_ajout_photo = async (requete, reponse) => {
 }
 
 exports.ajout_photo = async (requete, reponse) => {
-    let pose = requete.body.photo;
-    console.log(pose);
+    console.log('Je passe dans le POST AJOUT PHOTO')
+    .select("photo")
+    console.log(requete.body.comments)
 
     bdd.connexion.then(async db => {
         console.log('Connected')
