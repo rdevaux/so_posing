@@ -37,17 +37,23 @@ exports.affichage_photos = async (requete, reponse) => {
 }
 
 exports.affichage_ajout_photo = async (requete, reponse) => {
-    reponse.render('photos/ajout_photo.pug', { id_filtre: requete.params.id })
+    bdd.connexion.then(async db => {
+        console.log('Connected');
+
+        let Filtres = require('../models/filtres.model')(db, config);
+        let listeFiltre = await Filtres.getFiltre(requete.params.id);
+
+        reponse.render('photos/ajout_photo.pug', { listeFiltre })
+    })
 }
 
-// exports.ajout_photo = async (requete, reponse) => {
-//     let pose = requete.body.pose;
+exports.ajout_photo = async (requete, reponse) => {
+    let pose = requete.body.photo;
+    console.log(pose);
 
+    bdd.connexion.then(async db => {
+        console.log('Connected')
 
-//     bdd.connexion.then(async db => {
-//         console.log('Connected')
-
-//         let Photos = require('../models/photos.model')(db, config);
-//         let
-//     })
-// }
+        let Photos = require('../models/photos.model')(db, config);
+    })
+}

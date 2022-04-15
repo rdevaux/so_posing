@@ -4,26 +4,34 @@ block content
 
     - var title = "Importer une photo";
 
-    include ../header.pug
+    .bloc
+        include ../header.pug
 
-    form(role="form" method="post" action="")
-        .flex 
-            .blocTitre
-                img(src="/images/img_choisir_photo.svg")
-                label.titre(for="photo")= "Choisissez une photo"
-            .btnParcourir 
-                button.parcourir= "Parcourir"
-                input#photo(type="file" name="parcourir")
-        
-        .import-photo
-            img(src="/images/img_centrale.svg")
+        form(role="form" method="post" action="" enctype="multipart/form-data")
+            .flex 
+                .blocTitre
+                    img(src="/images/img_choisir_photo.svg")
+                    label.titreLabel(for="photo")= "Choisissez une photo"
+                .btnParcourir 
+                    button.parcourir= "Parcourir"
+                    input#photo(type="file" name="photo")
+            
+                .import-photo
+                    img(src="/images/img_centrale.svg")
 
-        .blocTitreCommentaire 
-            img(src="/images/img_commentaire.svg")
-            label.titre(for="comments")= "Ajouter un commentaire"
-        
-        textarea#comments.commentaires(name="comments" placeholder="Votre commentaire ici")
+                .blocTitreSelect 
+                    img(src="/images/img_tag.svg")
+                    p.titreLabel= "Ajouter un filtre"
+                select.filtre
+                    each filtre in listeFiltre
+                        option(value=filtre.id_filtre)= filtre.nom_filtre
 
-        button.envoyer(type="submit")= "Envoyer"
+                .blocTitreCommentaire 
+                    img(src="/images/img_commentaire.svg")
+                    label.titreLabel(for="comments")= "Ajouter un commentaire"
+                
+                textarea#comments.commentaires(name="comments" placeholder="Votre commentaire ici")
 
-        input#filtre(type="hidden" name="filtre" value=id_filtre)
+                button.envoyer(type="submit")= "Envoyer"
+
+                input#filtre(type="hidden" name="filtre" value=id_filtre)

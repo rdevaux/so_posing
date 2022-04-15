@@ -203,4 +203,121 @@ ul {
   height: 80px;
 }
 
+/* PAGE AJOUT PHOTO */
+.bloc {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.bloc .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.bloc .flex .blocTitre {
+  display: flex;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitre .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitre img {
+  padding-right: 10px;
+  height: 28px;
+}
+.bloc .flex .btnParcourir {
+  position: relative;
+}
+.bloc .flex .btnParcourir .parcourir {
+  background-color: #C48B6B;
+  border: none;
+  height: 40px;
+  width: 150px;
+  color: #473229;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+.bloc .flex .btnParcourir input[type=file] {
+  position: absolute;
+  height: 40px;
+  width: 150px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.bloc .flex .import-photo {
+  align-self: center;
+  height: 246px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  margin-top: 21px;
+}
+.bloc .flex .import-photo img {
+  padding: 60px 0 0 127px;
+}
+.bloc .flex .blocTitreSelect {
+  display: flex;
+  margin: 39px 220px 0 0;
+}
+.bloc .flex .blocTitreSelect .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitreSelect img {
+  margin-right: 6px;
+}
+.bloc .flex .filtre {
+  height: 48px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  align-self: center;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding-left: 7px;
+}
+.bloc .flex .blocTitreCommentaire {
+  display: flex;
+  margin: 39px 160px 15px 0;
+}
+.bloc .flex .blocTitreCommentaire .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .commentaires {
+  height: 200px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  align-self: center;
+  border-radius: 4px;
+  padding-left: 7px;
+}
+.bloc .flex .envoyer {
+  background-color: #C48B6B;
+  border: none;
+  height: 40px;
+  width: 380px;
+  color: #473229;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 31px 0 62px 0;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+}
+
 /*# sourceMappingURL=style.css.map */
