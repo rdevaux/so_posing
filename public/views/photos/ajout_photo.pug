@@ -1,0 +1,29 @@
+extends ../base.pug
+
+block content 
+
+    - var title = "Importer une photo";
+
+    include ../header.pug
+
+    form(role="form" method="post" action="")
+        .flex 
+            .blocTitre
+                img(src="/images/img_choisir_photo.svg")
+                label.titre(for="photo")= "Choisissez une photo"
+            .btnParcourir 
+                button.parcourir= "Parcourir"
+                input#photo(type="file" name="parcourir")
+        
+        .import-photo
+            img(src="/images/img_centrale.svg")
+
+        .blocTitreCommentaire 
+            img(src="/images/img_commentaire.svg")
+            label.titre(for="comments")= "Ajouter un commentaire"
+        
+        textarea#comments.commentaires(name="comments" placeholder="Votre commentaire ici")
+
+        button.envoyer(type="submit")= "Envoyer"
+
+        input#filtre(type="hidden" name="filtre" value=id_filtre)
