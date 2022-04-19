@@ -6,6 +6,8 @@ block content
 
     include ../header.pug
 
+    .bloc-haut
+
     // ScrollBar Horizontal des filtres
     .scroll-toggle 
         ul.list
@@ -18,10 +20,9 @@ block content
     if listeBuff
         each photo in listeBuff
             //- img.photos(src="data:image/png;base64," + photo.photo_pose)
-            div
-                img.photos(src="data:image/png;base64," + photo)
-                #fav
-                    img.f(src="/images/fav-false.png", alt="non-favori")
+            img.photos(src="data:image/png;base64," + photo)
+    
+    .bloc-bas
 
 
 
@@ -43,5 +44,3 @@ block content
         li
             a(href="")
                 img(src="/images/MENU_FAVORIS.png")
-
-    script(src="/javascript/fav.js") 
