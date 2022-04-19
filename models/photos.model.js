@@ -26,7 +26,7 @@ let Photos = class {
 
     static addPhoto(pose, commentaire, id_filtre) {
         return new Promise(next => {
-            db.query("INSERT INTO `pose`(`photo_pose`, `commentaire`, `id_filtre`) VALUES ('?','?','?')", [pose, commentaire, id_filtre])
+            db.query("INSERT INTO `pose`(`photo_pose`, `commentaire`, `id_filtre`) VALUES (?,?,?)", [pose, commentaire, id_filtre])
                 .then(result => next(result))
                 .catch(error => next(error))
         })

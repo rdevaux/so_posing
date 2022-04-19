@@ -45,16 +45,27 @@ exports.affichage_ajout_photo = async (requete, reponse) => {
 
         reponse.render('photos/ajout_photo.pug', { listeFiltre })
     })
+        .catch(error => {
+            console.log(error);
+            console.log('Error during connection database');
+        })
 }
 
 exports.ajout_photo = async (requete, reponse) => {
-    console.log('Je passe dans le POST AJOUT PHOTO')
-    .select("photo")
-    console.log(requete.body.comments)
+    const img = requete.file.buffer
+    const filtre = requete.body.filtre
+    const commentaires = requete.body.comments
 
     bdd.connexion.then(async db => {
         console.log('Connected')
 
         let Photos = require('../models/photos.model')(db, config);
+        Photos.addPhoto(img, commentaires, filtre[0]);
+
+        reponse.redirect('/')
     })
+        .catch(error => {
+            console.log(error);
+            console.log('Error during connection database');
+        })
 }

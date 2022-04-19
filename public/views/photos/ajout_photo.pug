@@ -14,7 +14,7 @@ block content
                     label.titreLabel(for="photo")= "Choisissez une photo"
                 .btnParcourir 
                     button.parcourir= "Parcourir"
-                    input#photo(type="file" name="photo")
+                    input#photo(type="file" name="photo" required)
             
                 .import-photo
                     img(src="/images/img_centrale.svg")
@@ -22,7 +22,7 @@ block content
                 .blocTitreSelect 
                     img(src="/images/img_tag.svg")
                     p.titreLabel= "Ajouter un filtre"
-                select.filtre
+                select.filtre(name="filtre")
                     each filtre in listeFiltre
                         option(value=filtre.id_filtre)= filtre.nom_filtre
 
@@ -30,7 +30,7 @@ block content
                     img(src="/images/img_commentaire.svg")
                     label.titreLabel(for="comments")= "Ajouter un commentaire"
                 
-                textarea#comments.commentaires(name="comments" placeholder="Votre commentaire ici")
+                textarea#comments.commentaires(name="comments" placeholder="Votre commentaire ici" required)
 
                 button.envoyer(type="submit")= "Envoyer"
 
