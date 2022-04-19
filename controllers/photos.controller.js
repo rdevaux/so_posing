@@ -25,7 +25,8 @@ exports.affichage_photos = async (requete, reponse) => {
 
         for (let i = 0; i < listePhotosBD.length; i++) {
             let img = Buffer.from(listePhotosBD[i].photo_pose).toString('base64');
-            listeBuff.push(img);
+            let fav = listePhotosBD[i].favori;
+            listeBuff.push([img, fav]);
         }
 
         reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, listeBuff })

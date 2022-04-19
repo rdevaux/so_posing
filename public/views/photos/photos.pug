@@ -16,19 +16,19 @@ block content
                     input(type="hidden" value=filtre.id_filtre name='id')
                     button(type="submit" class="form-btn")
                         li.list-item #{filtre.nom_filtre}
+
     // Affichages des photos
     if listeBuff
         each photo in listeBuff
-            //- img.photos(src="data:image/png;base64," + photo.photo_pose)
             div
-                img.photos(src="data:image/png;base64," + photo)
                 #fav
-                    img.f(src="/images/fav-false.png", alt="non-favori")
+                    if photo[1] == 0
+                        img.f(src="/images/fav-false.png", alt="non-favori")
+                    else
+                        img.f(src="/images/fav-true.png", alt="favori")
+                img.photos(src="data:image/png;base64," + photo[0])
     
     .bloc-bas
-
-
-
 
     // Menu du bas de page
     ul.navbar-bottom
