@@ -121,6 +121,11 @@
     background-color: black;
     opacity: .5; }
 
+#fav {
+  z-index: 1;
+  position: absolute;
+  margin: 10px 0 0 10px; }
+
 .photos {
   width: 100%;
   height: 100%; }
