@@ -154,8 +154,13 @@ ul {
             border: 2px solid #C48B6B;
             margin-top: 21px;
 
-            img{
-                padding: 60px 0 0 127px;
+            img {
+                height: 246px;
+                width: 380px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 

@@ -9,7 +9,8 @@
 *, ::before, ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /********************************************
 -------- IMPORT DES FICHIER SCSS ------------
@@ -25,22 +26,26 @@
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .titre {
   width: 100%;
   margin-top: 75px;
   text-align: center;
   font-weight: lighter;
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.75rem; }
+  font-family: "Dancing Script", cursive;
+  font-size: 3.75rem;
+}
 
 .firstPartTitle {
   color: #C48B6B;
-  text-shadow: 1px 1px 5px #C48B6B; }
+  text-shadow: 1px 1px 5px #C48B6B;
+}
 
 .secondPartTitle {
-  text-shadow: 1px 2px 5px #C48B6B; }
+  text-shadow: 1px 2px 5px #C48B6B;
+}
 
 .blob {
   background-image: url(/images/blob.png);
@@ -49,44 +54,52 @@
   height: 46vh;
   width: 100vw;
   position: absolute;
-  align-self: flex-end; }
+  align-self: flex-end;
+}
 
 .appareil {
   z-index: 1;
   align-self: flex-end;
   margin-top: 300px;
-  margin-left: 140px; }
+  margin-left: 140px;
+}
 
 .button {
   width: 100%;
   text-align: center;
   z-index: 1;
   align-self: flex-end;
-  margin-bottom: 59px; }
+  margin-bottom: 59px;
+}
 
 .cours, .tech {
-  margin-right: 29px; }
+  margin-right: 29px;
+}
 
 .header {
   position: fixed;
   z-index: 2;
   width: 100%;
   height: 70px;
-  background-color: #F3E9DC; }
-  .header h1 {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    font-size: 20px;
-    color: #473229;
-    font-weight: bold;
-    padding-top: 22px; }
-  .header img {
-    position: absolute;
-    padding: 22px 0 0 40px; }
+  background-color: #F3E9DC;
+}
+.header h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: #473229;
+  font-weight: bold;
+  padding-top: 22px;
+}
+.header img {
+  position: absolute;
+  padding: 22px 0 0 40px;
+}
 
 .descente {
   width: 100%;
-  height: 70px; }
+  height: 70px;
+}
 
 .categorie {
   height: 170px;
@@ -96,39 +109,45 @@
   border-top: 1px solid white;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .categorie h2 {
-    display: block;
-    position: absolute;
-    font-family: 'Dancing Script', cursive;
-    font-size: 43px;
-    color: white;
-    font-weight: 100;
-    width: 100%;
-    text-align: center;
-    z-index: 1; }
-  .categorie p {
-    font-family: 'Mukta Vaani', sans-serif;
-    font-size: 20px;
-    font-weight: 100;
-    color: white;
-    padding-top: 100px;
-    position: absolute;
-    z-index: 1; }
-  .categorie .overlay {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: .5; }
+  align-items: center;
+}
+.categorie h2 {
+  display: block;
+  position: absolute;
+  font-family: "Dancing Script", cursive;
+  font-size: 43px;
+  color: white;
+  font-weight: 100;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+.categorie p {
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  color: white;
+  padding-top: 100px;
+  position: absolute;
+  z-index: 1;
+}
+.categorie .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
 
 #fav {
   z-index: 1;
   position: absolute;
-  margin: 10px 0 0 10px; }
+  margin: 10px 0 0 10px;
+}
 
 .photos {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .scroll-toggle {
   position: fixed;
@@ -141,13 +160,15 @@
   display: flex;
   max-width: 680px;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+}
 
 .list {
   padding-bottom: 0px;
   display: flex;
   flex: 1 1 auto;
-  overflow-x: scroll; }
+  overflow-x: scroll;
+}
 
 .list-item {
   flex: 0 0 auto;
@@ -156,19 +177,23 @@
   padding: 19px 10px 15px 10px;
   color: #473229;
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
-  font-weight: 600; }
-  .list-item:active {
-    border-bottom: 7px solid #C48B6B;
-    color: #C48B6B; }
+  font-weight: 600;
+}
+.list-item:active {
+  border-bottom: 7px solid #C48B6B;
+  color: #C48B6B;
+}
 
 .form-btn {
   border: none;
-  background-color: white; }
+  background-color: white;
+}
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .navbar-bottom {
   position: fixed;
@@ -179,120 +204,148 @@ ul {
   height: 80px;
   background-color: #F3E9DC;
   padding-top: 20px;
-  z-index: 2; }
+  z-index: 2;
+}
 
 .monte {
   position: relative;
   bottom: 52px;
-  z-index: 2; }
+  z-index: 2;
+}
 
 .bloc-haut {
   width: 100%;
-  height: 80px; }
+  height: 80px;
+}
 
 .bloc-bas {
   width: 100%;
-  height: 80px; }
+  height: 80px;
+}
 
 /* PAGE AJOUT PHOTO */
 .bloc {
   display: flex;
   justify-content: center;
-  flex-direction: column; }
-  .bloc .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 20px; }
-    .bloc .flex .blocTitre {
-      display: flex;
-      padding-top: 5px; }
-      .bloc .flex .blocTitre .titreLabel {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        color: #473229;
-        padding-top: 5px; }
-      .bloc .flex .blocTitre img {
-        padding-right: 10px;
-        height: 28px; }
-    .bloc .flex .btnParcourir {
-      position: relative; }
-      .bloc .flex .btnParcourir .parcourir {
-        background-color: #C48B6B;
-        border: none;
-        height: 40px;
-        width: 150px;
-        color: #473229;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif; }
-      .bloc .flex .btnParcourir input[type="file"] {
-        position: absolute;
-        height: 40px;
-        width: 150px;
-        top: 0;
-        left: 0;
-        opacity: 0; }
-    .bloc .flex .import-photo {
-      align-self: center;
-      height: 246px;
-      width: 380px;
-      border: 2px solid #C48B6B;
-      margin-top: 21px; }
-      .bloc .flex .import-photo img {
-        padding: 60px 0 0 127px; }
-    .bloc .flex .blocTitreSelect {
-      display: flex;
-      margin: 39px 220px 0 0; }
-      .bloc .flex .blocTitreSelect .titreLabel {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        color: #473229;
-        padding-top: 5px; }
-      .bloc .flex .blocTitreSelect img {
-        margin-right: 6px; }
-    .bloc .flex .filtre {
-      height: 48px;
-      width: 380px;
-      border: 2px solid #C48B6B;
-      align-self: center;
-      border-radius: 4px;
-      margin-top: 15px;
-      padding-left: 7px; }
-    .bloc .flex .blocTitreCommentaire {
-      display: flex;
-      margin: 39px 160px 15px 0; }
-      .bloc .flex .blocTitreCommentaire .titreLabel {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        color: #473229;
-        padding-top: 5px; }
-      .bloc .flex .blocTitreCommentaire img {
-        margin-right: 6px; }
-    .bloc .flex .commentaires {
-      height: 200px;
-      width: 380px;
-      border: 2px solid #C48B6B;
-      align-self: center;
-      border-radius: 4px;
-      padding-left: 7px; }
-    .bloc .flex .envoyer {
-      background-color: #C48B6B;
-      border: none;
-      height: 40px;
-      width: 380px;
-      color: #473229;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 18px;
-      margin: 31px 0 62px 0;
-      font-family: 'Roboto', sans-serif;
-      align-self: center; }
+  flex-direction: column;
+}
+.bloc .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.bloc .flex .blocTitre {
+  display: flex;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitre .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitre img {
+  padding-right: 10px;
+  height: 28px;
+}
+.bloc .flex .btnParcourir {
+  position: relative;
+}
+.bloc .flex .btnParcourir .parcourir {
+  background-color: #C48B6B;
+  border: none;
+  height: 40px;
+  width: 150px;
+  color: #473229;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+.bloc .flex .btnParcourir input[type=file] {
+  position: absolute;
+  height: 40px;
+  width: 150px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.bloc .flex .import-photo {
+  align-self: center;
+  height: 246px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  margin-top: 21px;
+}
+.bloc .flex .import-photo img {
+  height: 246px;
+  width: 380px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bloc .flex .blocTitreSelect {
+  display: flex;
+  margin: 39px 220px 0 0;
+}
+.bloc .flex .blocTitreSelect .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitreSelect img {
+  margin-right: 6px;
+}
+.bloc .flex .filtre {
+  height: 48px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  align-self: center;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding-left: 7px;
+}
+.bloc .flex .blocTitreCommentaire {
+  display: flex;
+  margin: 39px 160px 15px 0;
+}
+.bloc .flex .blocTitreCommentaire .titreLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #473229;
+  padding-top: 5px;
+}
+.bloc .flex .blocTitreCommentaire img {
+  margin-right: 6px;
+}
+.bloc .flex .commentaires {
+  height: 200px;
+  width: 380px;
+  border: 2px solid #C48B6B;
+  align-self: center;
+  border-radius: 4px;
+  padding-left: 7px;
+}
+.bloc .flex .envoyer {
+  background-color: #C48B6B;
+  border: none;
+  height: 40px;
+  width: 380px;
+  color: #473229;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 31px 0 62px 0;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+}
 
 /*# sourceMappingURL=style.css.map */
