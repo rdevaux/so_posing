@@ -18,6 +18,12 @@
 /********************************************
 ----------------- PAGE ACCUEIL --------------
 ********************************************/
+#fav{
+  z-index: 3;
+  position: absolute;
+  margin: 10px 0 0 10px;
+}
+
 .firstPage {
   background-image: url(/images/BACKGROUND_LANDING.png);
   background-repeat: no-repeat;

@@ -18,7 +18,10 @@ block content
     if listeBuff
         each photo in listeBuff
             //- img.photos(src="data:image/png;base64," + photo.photo_pose)
-            img.photos(src="data:image/png;base64," + photo)
+            div
+                img.photos(src="data:image/png;base64," + photo)
+                #fav
+                    img.f(src="/images/fav-false.png", alt="non-favori")
 
 
 
@@ -40,3 +43,5 @@ block content
         li
             a(href="")
                 img(src="/images/MENU_FAVORIS.png")
+
+    script(src="/javascript/fav.js") 
