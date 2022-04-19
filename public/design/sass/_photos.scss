@@ -1,6 +1,6 @@
-@mixin espace {
+@mixin espace($taille) {
     width: 100%;
-    height: 80px;
+    height: $taille;
 }
 
 @mixin titrePerso{
@@ -87,11 +87,11 @@ ul {
 }
 
 .bloc-haut{
-    @include espace()
+    @include espace(128px)
 }
 
 .bloc-bas{
-    @include espace()
+    @include espace(80px)
 }
 
 /* PAGE AJOUT PHOTO */
