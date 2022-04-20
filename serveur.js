@@ -2,6 +2,11 @@
  * IMPORT DES MODULES *
 ************************/
 
+const Promise = require('bluebird');
+Promise.config({
+    cancellation: true
+});
+
 const express = require('express');
 const morgan = require('morgan');
 const config = require('./config.json');

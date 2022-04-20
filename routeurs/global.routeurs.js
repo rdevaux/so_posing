@@ -3,12 +3,31 @@
 ************************/
 
 const express = require('express');
+const checkInternetConnected = require('check-internet-connected');
 
 /***********************
  * VARIABLES GLOBALES  *
 ************************/
 
 const routeur = express.Router();
+const config = {
+    timeout: 5000, //timeout connecting to each server(A and AAAA), each try (default 5000)
+    retries: 5,//number of retries to do before failing (default 5)
+    domain: 'google.com'//the domain to check DNS record of
+}
+
+let internet = false;
+
+setInterval(() => {
+    checkInternetConnected(config)
+        .then(() => {
+            console.log("Internet available");
+            internet = true;
+        }).catch((error) => {
+            console.log("No internet", error);
+            internet = false;
+        });
+}, 15000);
 
 /***********************
  *       ROUTAGE       *
@@ -16,7 +35,7 @@ const routeur = express.Router();
 
 // Page d'accueil
 routeur.get('/', (requete, reponse) => {
-    reponse.render('accueil/accueil.pug')
+    reponse.render('accueil/accueil.pug', { internet })
 })
 
 // Gestion de l'erreur 404

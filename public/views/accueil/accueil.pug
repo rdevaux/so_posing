@@ -9,8 +9,12 @@ block content
 
 		.blob
 		.appareil
-			a(href="/categories/")
-				img(src="/images/BOUTON_ENTREE.png")
+			if internet
+				a(href="/categories/")
+					img(src="/images/BOUTON_ENTREE.png")
+			else 
+				img(src="/images/BOUTON_ENTREE_FALSE.png")
+
 		.button
 			img.cours(src="/images/BOUTON_COURS.png")
 			img.tech(src="/images/BOUTON_TECH.png")
