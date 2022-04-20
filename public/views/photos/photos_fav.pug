@@ -20,7 +20,7 @@ block content
         each photo in listeBuff
             .divPhoto
                 .fav
-                    form(method="POST")
+                    form(method="POST" action="/photos/" + idSousCategorie + "/" + idFiltre)
                         input(type="hidden" value=photo[0] name='id_pose')
                         input(type="hidden" value=photo[2] name='favori')
                         button.btn-fav(type="submit")
@@ -47,7 +47,7 @@ block content
             a(href="")
                 img(src="/images/MENU_COMMENTAIRE.png")
         li
-            a(href="/photos/" + idSousCategorie + "/" + idFiltre + "/fav")
-                img(src="/images/MENU_FAVORIS.png")
+            a(href="/photos/" + idSousCategorie + "/" + idFiltre)
+                img(src="/images/coeurplein.png")
 
     script(src="/javascript/photos.js")

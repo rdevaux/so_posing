@@ -143,6 +143,10 @@
   position: absolute;
   margin: 10px 0 0 10px;
 }
+.fav .btn-fav {
+  background: transparent;
+  border: none;
+}
 
 .photos {
   width: 100%;
@@ -168,6 +172,9 @@
   display: flex;
   flex: 1 1 auto;
   overflow-x: scroll;
+}
+.list a {
+  text-decoration: none;
 }
 
 .list-item {

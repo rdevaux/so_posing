@@ -45,4 +45,15 @@ let Photos = class {
                 })
         })
     }
+
+    static getPhotosFav() {
+        return new Promise(next => {
+            db.query("SELECT `id_pose`, `photo_pose`, `commentaire`, `favori` FROM `pose` WHERE favori = 1 ")
+                .then(result => next(result))
+                .catch(error => {
+                    console.log(error);
+                    next(error)
+                })
+        })
+    }
 }

@@ -31,7 +31,7 @@ exports.affichage_photos = async (requete, reponse) => {
             listeBuff.push([id_pose, img, fav]);
         }
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, listeBuff })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
     })
         .catch(error => {
             console.log(error);
@@ -77,7 +77,7 @@ exports.gestion_favori = async (requete, reponse) => {
 
     let favori = false;
 
-    if(requete.body.favori == 0) {
+    if (requete.body.favori == 0) {
         favori = true
     } else if (requete.body.favori == 1) {
         favori = false
@@ -93,8 +93,8 @@ exports.gestion_favori = async (requete, reponse) => {
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
+        let updateFav = await Photos.updateFav(favori, requete.body.id_pose);
         let listePhotosBD = await Photos.getPhotosByFilter(requete.params.id_filtre);
-        await Photos.updateFav(favori, requete.body.id_pose);
 
         let listeBuff = [];
 
@@ -105,6 +105,36 @@ exports.gestion_favori = async (requete, reponse) => {
             listeBuff.push([id_pose, img, fav]);
         }
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, listeBuff })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
     })
+}
+
+exports.affichage_favori = async (requete, reponse) => {
+    bdd.connexion.then(async db => {
+        console.log('Connected')
+
+        let Filtres = require('../models/filtres.model')(db, config);
+        let listeFiltre = await Filtres.getFiltre(requete.params.id);
+
+        let Categories = require('../models/categories.model')(db, config);
+        let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
+
+        let Photos = require('../models/photos.model')(db, config);
+        let listePhotosBD = await Photos.getPhotosFav();
+
+        let listeBuff = [];
+
+        for (let i = 0; i < listePhotosBD.length; i++) {
+            let id_pose = listePhotosBD[i].id_pose;
+            let img = Buffer.from(listePhotosBD[i].photo_pose).toString('base64');
+            let fav = listePhotosBD[i].favori;
+            listeBuff.push([id_pose, img, fav]);
+        }
+
+        reponse.render('photos/photos_fav.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
+    })
+        .catch(error => {
+            console.log(error);
+            console.log('Error during connection database');
+        })
 }

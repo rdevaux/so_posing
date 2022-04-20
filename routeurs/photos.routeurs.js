@@ -27,6 +27,9 @@ routeur.get('/:id/:id_filtre', photosController.affichage_photos)
 // Gestion des favoris
 routeur.post('/:id/:id_filtre', photosController.gestion_favori)
 
+// Affichage des photos favoris
+routeur.get('/:id/:id_filtre/fav', photosController.affichage_favori)
+
 // Affichage de la page d'ajout de photo
 routeur.get('/:id/ajout/photo', photosController.affichage_ajout_photo)
 
