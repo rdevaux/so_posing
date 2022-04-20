@@ -35,6 +35,14 @@ exports.affichage_sous_categories = async (requete, reponse) => {
         let Categories = require('../models/categories.model')(db, config);
         let listeSousCategories = await Categories.getSousCategoriesById(requete.params.id);
         let nomCategorie = await Categories.getNomCategorie(requete.params.id)
+
+        let Filtres = require('../models/filtres.model')(db, config);
+
+        let listeFiltre = [];
+        
+        for (let i = 0; i < listeSousCategories.length; i++) {
+            listeFiltre.push(await Filtres.getFiltre(listeSousCategories[i].id_sous_categorie))
+        }
         
         reponse.render('categories/sous-categories.pug', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
     })
