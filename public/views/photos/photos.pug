@@ -12,21 +12,23 @@ block content
     .scroll-toggle 
         ul.list
             each filtre in listeFiltre 
-                form(method="POST") 
-                    input(type="hidden" value=filtre.id_filtre name='id')
-                    button(type="submit" class="form-btn")
+                a(href="/photos/" + idSousCategorie + "/" + filtre.id_filtre)
                         li.list-item #{filtre.nom_filtre}
 
     // Affichages des photos
     if listeBuff
         each photo in listeBuff
             div
-                #fav
-                    if photo[1] == 0
-                        img.f(src="/images/fav-false.png", alt="non-favori")
-                    else
-                        img.f(src="/images/fav-true.png", alt="favori")
-                img.photos(src="data:image/png;base64," + photo[0])
+                .fav
+                    form(method="POST")
+                        input(type="hidden" value=photo[0] name='id_pose')
+                        input(type="hidden" value=photo[2] name='favori')
+                        button.btn-fav(type="submit")
+                            if photo[2] == 0
+                                img.f(src="/images/fav-false.png", alt="non-favori")
+                            else
+                                img.f(src="/images/fav-true.png", alt="favori")
+                img.photos(src="data:image/png;base64," + photo[1])
     
     .bloc-bas
 
@@ -39,7 +41,7 @@ block content
             a(href="")
                 img(src="/images/clarity_search-line.png")
         li.monte
-            a(href="/photos/" + idSousCategorie + "/ajout_photo")
+            a(href="/photos/" + idSousCategorie + "/ajout/photo")
                 img(src="/images/BOUTON_AJOUT_PHOTO.png")
         li
             a(href="")
@@ -48,4 +50,4 @@ block content
             a(href="")
                 img(src="/images/MENU_FAVORIS.png")
 
-    script(src="/javascript/fav.js")
+    script(src="/javascript/photos.js")

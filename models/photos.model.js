@@ -9,16 +9,16 @@ module.exports = (_db, _config) => {
 let Photos = class {
 
     static getAll() {
-        return new Promise (next => {
+        return new Promise(next => {
             db.query('SELECT * FROM `pose`')
-            .then(result => next(result))
-            .catch(error => next(error))
+                .then(result => next(result))
+                .catch(error => next(error))
         })
     }
 
     static getPhotosByFilter(id) {
         return new Promise(next => {
-            db.query('SELECT `photo_pose`, `commentaire`, `favori` FROM `pose` WHERE `id_filtre` = ?', [id])
+            db.query('SELECT `id_pose`, `photo_pose`, `commentaire`, `favori` FROM `pose` WHERE `id_filtre` = ?', [id])
                 .then(result => next(result))
                 .catch(error => next(error))
         })
@@ -35,4 +35,14 @@ let Photos = class {
         })
     }
 
+    static updateFav(value, id_pose) {
+        return new Promise(next => {
+            db.query("UPDATE `pose` SET `favori`= ? WHERE `id_pose` = ?", [value, id_pose])
+                .then(result => next(result))
+                .catch(error => {
+                    console.log(error);
+                    next(error)
+                })
+        })
+    }
 }
