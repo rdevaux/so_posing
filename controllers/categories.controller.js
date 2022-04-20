@@ -17,13 +17,21 @@ exports.affichage_categories = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
-    
-        reponse.render('categories/categories.pug', {listeCategories})
+
+        let listeBuff = [];
+
+        for (let i = 0; i < listeCategories.length; i++) {
+            let id_cat = listeCategories[i].id_categorie;
+            let img = Buffer.from(listeCategories[i].photo_categorie).toString('base64');
+            let name = listeCategories[i].nom_categorie;
+            listeBuff.push([id_cat, name, img]);
+        }
+        reponse.render('categories/categories.pug', { listeBuff })
     })
-    .catch(error => {
-        console.log(error);
-        console.log('Error during connection database');
-    })
+        .catch(error => {
+            console.log(error);
+            console.log('Error during connection database');
+        })
 }
 
 // Affichage Sous-Categorie
@@ -39,22 +47,22 @@ exports.affichage_sous_categories = async (requete, reponse) => {
         let Filtres = require('../models/filtres.model')(db, config);
 
         let listeFiltreSousCategories = [];
-        
+
         for (let i = 0; i < listeSousCategories.length; i++) {
             listeFiltreSousCategories.push([
                 listeSousCategories[i].id_sous_categorie,
-                listeSousCategories[i].nom_sous_categorie, 
-                Buffer.from(listeSousCategories[i].photo_sous_categorie).toString('base64'), 
+                listeSousCategories[i].nom_sous_categorie,
+                Buffer.from(listeSousCategories[i].photo_sous_categorie).toString('base64'),
                 JSON.parse(JSON.stringify(await Filtres.getFirstFiltre(listeSousCategories[i].id_sous_categorie)))[0].id_filtre
             ])
         }
 
         console.log(listeFiltreSousCategories)
-        
-        reponse.render('categories/sous-categories.pug', {listeFiltreSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
+
+        reponse.render('categories/sous-categories.pug', { listeFiltreSousCategories, nomCategorie: nomCategorie[0].nom_categorie })
     })
-    .catch(error => {
-        console.log(error);
-        console.log('Error during connection database');
-    })
+        .catch(error => {
+            console.log(error);
+            console.log('Error during connection database');
+        })
 }
