@@ -12,7 +12,7 @@ block content
     .scroll-toggle 
         ul.list
             each filtre in listeFiltre 
-                a(href="/photos/" + idSousCategorie + "/" + filtre.id_filtre)
+                a(href="/photos/" + idSousCategorie + "/" + filtre.id_filtre + "/fav")
                         li.list-item #{filtre.nom_filtre}
 
     // Affichages des photos

@@ -57,8 +57,6 @@ exports.affichage_sous_categories = async (requete, reponse) => {
             ])
         }
 
-        console.log(listeFiltreSousCategories)
-
         reponse.render('categories/sous-categories.pug', { listeFiltreSousCategories, nomCategorie: nomCategorie[0].nom_categorie })
     })
         .catch(error => {

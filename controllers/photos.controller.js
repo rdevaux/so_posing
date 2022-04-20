@@ -65,7 +65,7 @@ exports.ajout_photo = async (requete, reponse) => {
         let Photos = require('../models/photos.model')(db, config);
         Photos.addPhoto(img, commentaires, filtre[0]);
 
-        reponse.redirect('/')
+        reponse.redirect(`/photos/${requete.params.id}/${requete.body.filtre}`)
     })
         .catch(error => {
             console.log(error);
@@ -120,7 +120,7 @@ exports.affichage_favori = async (requete, reponse) => {
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
-        let listePhotosBD = await Photos.getPhotosFav();
+        let listePhotosBD = await Photos.getPhotosFav(requete.params.id_filtre);
 
         let listeBuff = [];
 

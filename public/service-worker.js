@@ -1,9 +1,13 @@
 const CACHE_NAME = 'sw-cache-example';
 const toCache = [
+    'views/base.pug',
+    'views/header.pug',
     'views/accueil/accueil.pug',
     'views/categories/categories.pug',
     'views/categories/sous-categories.pug',
     'views/photos/photos.pug',
+    'views/photos/photos_fav.pug',
+    'views/photos/ajout_photo.pug',
     'javascript/status.js',
 ];
 

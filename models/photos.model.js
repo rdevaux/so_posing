@@ -46,9 +46,9 @@ let Photos = class {
         })
     }
 
-    static getPhotosFav() {
+    static getPhotosFav(id_filtre) {
         return new Promise(next => {
-            db.query("SELECT `id_pose`, `photo_pose`, `commentaire`, `favori` FROM `pose` WHERE favori = 1 ")
+            db.query("SELECT `id_pose`, `photo_pose`, `commentaire`, `favori` FROM `pose` WHERE favori = 1 AND id_filtre = ?", [id_filtre])
                 .then(result => next(result))
                 .catch(error => {
                     console.log(error);
