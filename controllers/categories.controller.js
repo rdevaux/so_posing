@@ -17,8 +17,16 @@ exports.affichage_categories = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let listeCategories = await Categories.getCategories();
-    
-        reponse.render('categories/categories.pug', {listeCategories})
+
+        let listeBuff = [];
+
+        for (let i = 0; i < listeCategories.length; i++) {
+            let id_cat = listeCategories[i].id_categorie;
+            let img = Buffer.from(listeCategories[i].photo_categorie).toString('base64');
+            let name = listeCategories[i].nom_categorie;
+            listeBuff.push([id_cat, name, img]);
+        }
+        reponse.render('categories/categories.pug', {listeBuff})
     })
     .catch(error => {
         console.log(error);

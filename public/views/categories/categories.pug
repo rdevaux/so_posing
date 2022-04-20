@@ -8,9 +8,9 @@ block content
 
     .descente
 
-    each categorie in listeCategories
+    each photo in listeBuff
 
-        a(href="/categories/" + categorie.id_categorie)
+        a(href="/categories/" + photo[0])
             .categorie
-                img(src="/images/mariage.png")
-                h2 #{categorie.nom_categorie}
+                img(src="data:image/png;base64," + photo[2])
+                h2 #{photo[1]}
