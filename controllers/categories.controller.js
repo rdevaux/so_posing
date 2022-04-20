@@ -38,13 +38,13 @@ exports.affichage_sous_categories = async (requete, reponse) => {
 
         let Filtres = require('../models/filtres.model')(db, config);
 
-        let listeFiltre = [];
+        let listeFiltreSousCategories = [];
         
         for (let i = 0; i < listeSousCategories.length; i++) {
-            listeFiltre.push(await Filtres.getFiltre(listeSousCategories[i].id_sous_categorie))
+            listeFiltreSousCategories.push([listeSousCategories[i], JSON.parse(JSON.stringify(await Filtres.getFirstFiltre(listeSousCategories[i].id_sous_categorie)))[0]])
         }
         
-        reponse.render('categories/sous-categories.pug', {listeSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
+        reponse.render('categories/sous-categories.pug', {listeFiltreSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
     })
     .catch(error => {
         console.log(error);

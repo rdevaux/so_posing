@@ -2,19 +2,15 @@ extends ../base.pug
 
 block content
 
-	- var title = "Catégories";
+    - var title = "Catégories";
 
-	include ../header.pug
+    include ../header.pug
 
-	.descente
+    .descente
 
-	each categorie in listeCategories
+    each categorie in listeCategories
 
-		a(href="/categories/" + categorie.id_categorie)
-			.categorie
-				h2 #{categorie.nom_categorie}
-				p 105 photos
-				.overlay
-
-
-
+        a(href="/categories/" + categorie.id_categorie)
+            .categorie
+                img(src="/images/mariage.png")
+                h2 #{categorie.nom_categorie}
