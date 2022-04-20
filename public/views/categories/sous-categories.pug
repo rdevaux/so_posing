@@ -10,7 +10,7 @@ block content
 
     each sous_categorie in listeFiltreSousCategories
 
-        a(href="/photos/" + sous_categorie[0].id_sous_categorie + "/" + sous_categorie[1].id_filtre)
+        a(href="/photos/" + sous_categorie[0] + "/" + sous_categorie[3])
             .categorie
-                img(src="/images/mariage.png")
-                h2 #{sous_categorie[0].nom_sous_categorie}
+                img(src="data:image/png;base64," + sous_categorie[2])
+                h2 #{sous_categorie[1]}

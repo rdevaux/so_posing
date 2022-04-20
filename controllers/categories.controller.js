@@ -41,8 +41,15 @@ exports.affichage_sous_categories = async (requete, reponse) => {
         let listeFiltreSousCategories = [];
         
         for (let i = 0; i < listeSousCategories.length; i++) {
-            listeFiltreSousCategories.push([listeSousCategories[i], JSON.parse(JSON.stringify(await Filtres.getFirstFiltre(listeSousCategories[i].id_sous_categorie)))[0]])
+            listeFiltreSousCategories.push([
+                listeSousCategories[i].id_sous_categorie,
+                listeSousCategories[i].nom_sous_categorie, 
+                Buffer.from(listeSousCategories[i].photo_sous_categorie).toString('base64'), 
+                JSON.parse(JSON.stringify(await Filtres.getFirstFiltre(listeSousCategories[i].id_sous_categorie)))[0].id_filtre
+            ])
         }
+
+        console.log(listeFiltreSousCategories)
         
         reponse.render('categories/sous-categories.pug', {listeFiltreSousCategories, nomCategorie: nomCategorie[0].nom_categorie})
     })
