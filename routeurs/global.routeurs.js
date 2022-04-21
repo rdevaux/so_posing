@@ -16,7 +16,7 @@ const config = {
     domain: 'google.com'//the domain to check DNS record of
 }
 
-let internet = false;
+let internet = true;
 
 setInterval(() => {
     checkInternetConnected(config)
