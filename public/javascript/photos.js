@@ -1,3 +1,5 @@
+// GESTION DU DOUBLE CLIQUE
+
 const divPhoto = document.querySelectorAll('.divPhoto')
 touchtime = 0;
 Array.from(divPhoto).forEach(element => {
