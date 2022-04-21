@@ -10,9 +10,10 @@ const config = require('./config.json');
 ************************/
 
 exports.connexion = mysql.createConnection({
-    socketPath: config.db.socketPath,
+    // socketPath: config.db.socketPath,
     host: config.db.host,
+    port: config.db.port,
     database: config.db.database,
     user: config.db.user,
-    password: config.db.password
+    password: config.db.password,
 })

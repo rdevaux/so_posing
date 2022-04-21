@@ -1,29 +1,46 @@
-version: '3.8'
+version: "3.2"
 services:
-  mysqldb:
-    image: mysql:5.7
-    restart: unless-stopped
+  nodejs:
+    build: 
+      context: .
+    image: node-soposing
+    networks:
+      - frontend
+      - backend
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=sopos
-    ports:
-      - 8889:8890
+      - MYSQL_HOST = localhost
+      - MYSQL_USER = user
+      - MYSQL_PASS = password
+      - MYSQL_DB = sopos
     volumes:
-      - db:/var/lib/mysql
-  app:
-    depends_on:
-      - mysqldb
-    build: /usr/src/app
-    restart: unless-stopped
+      - ./www/:/var/www/html/
     ports:
-      - 3002:3000
+      - "30001:3000"
+    container_name: nodejs-app
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
     environment:
-      - DB_HOST=localhost
-      - DB_USER=root
-      - DB_PASSWORD=root
-      - DB_NAME=sopos
-      - DB_PORT=8890
-    stdin_open: true
-    tty: true
-volumes:
-  db:
+      - MYSQL_ROOT_PASSWORD = root
+      - MYSQL_USER = user
+      - MYSQL_PASSWORD = password 
+      - MYSQL_DATABASE = sopos
+    container_name: mysql-app
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=mysql-app
+      - PMA_PORT=3306
+    volumes:
+      - /sessions
+    container_name: phpmyadmin-app
+networks:
+  frontend:
+  backend:
