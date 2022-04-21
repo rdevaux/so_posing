@@ -52,12 +52,12 @@
     }
 }
 
-.active {
+.scroll-active {
     border-bottom: 7px solid #C48B6B;
     color: #C48B6B;
 }
 
-.list-item{
+.list-item {
     flex: 0 0 auto;
     text-align: center;
     width: 86px;
@@ -69,7 +69,11 @@
     font-weight: 600;
 }
 
-.form-btn{
+.active {
+    color: #C48B6B;
+}
+
+.form-btn {
     border: none;
     background-color: white;
 }

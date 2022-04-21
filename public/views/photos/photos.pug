@@ -13,8 +13,8 @@ block content
     .scroll-toggle 
         ul.list
             each filtre in listeFiltre 
-                a(class={"active" : idFiltre == filtre.id_filtre} href="/photos/" + idSousCategorie + "/" + filtre.id_filtre)
-                        li.list-item #{filtre.nom_filtre}
+                a(class={"scroll-active" : idFiltre == filtre.id_filtre} href="/photos/" + idSousCategorie + "/" + filtre.id_filtre)
+                        li(class="list-item", class={"active" : idFiltre == filtre.id_filtre}) #{filtre.nom_filtre}
 
     // Affichages des photos
     if listeBuff

@@ -175,7 +175,7 @@
   text-decoration: none;
 }
 
-.active {
+.scroll-active {
   border-bottom: 7px solid #C48B6B;
   color: #C48B6B;
 }
@@ -190,6 +190,10 @@
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 600;
+}
+
+.active {
+  color: #C48B6B;
 }
 
 .form-btn {
