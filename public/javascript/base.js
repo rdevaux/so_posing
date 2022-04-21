@@ -4,4 +4,4 @@ function retour() {
 }
 
 // Bloque l'orientation de l'écran en mode portrait
-screen.orientation.lock("portrait");
+screen.orientation.lock("portrait-primary");

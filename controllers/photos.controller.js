@@ -18,6 +18,7 @@ exports.affichage_photos = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
+        let idCategorie = await Categories.getIdCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
         let listePhotosBD = await Photos.getPhotosByFilter(requete.params.id_filtre);
@@ -31,7 +32,7 @@ exports.affichage_photos = async (requete, reponse) => {
             listeBuff.push([id_pose, img, fav]);
         }
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff, idCategorie: idCategorie[0].id_categorie })
     })
         .catch(error => {
             console.log(error);
@@ -45,8 +46,9 @@ exports.affichage_ajout_photo = async (requete, reponse) => {
 
         let Filtres = require('../models/filtres.model')(db, config);
         let listeFiltre = await Filtres.getFiltre(requete.params.id);
+        let idFirstFiltre = await Filtres.getFirstFiltre(requete.params.id);
 
-        reponse.render('photos/ajout_photo.pug', { listeFiltre })
+        reponse.render('photos/ajout_photo.pug', { listeFiltre, idSousCategorie: requete.params.id, idFiltre: idFirstFiltre[0].id_filtre })
     })
         .catch(error => {
             console.log(error);
@@ -63,7 +65,7 @@ exports.ajout_photo = async (requete, reponse) => {
         console.log('Connected')
 
         let Photos = require('../models/photos.model')(db, config);
-        Photos.addPhoto(img, commentaires, filtre[0]);
+        Photos.addPhoto(img, commentaires, filtre);
 
         reponse.redirect(`/photos/${requete.params.id}/${requete.body.filtre}`)
     })
@@ -91,6 +93,7 @@ exports.gestion_favori = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
+        let idCategorie = await Categories.getIdCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
         let updateFav = await Photos.updateFav(favori, requete.body.id_pose);
@@ -105,7 +108,7 @@ exports.gestion_favori = async (requete, reponse) => {
             listeBuff.push([id_pose, img, fav]);
         }
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff, idCategorie: idCategorie[0].id_categorie })
     })
 }
 
@@ -118,6 +121,7 @@ exports.affichage_favori = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
+        let idCategorie = await Categories.getIdCategorie(requete.params.id);
 
         let Photos = require('../models/photos.model')(db, config);
         let listePhotosBD = await Photos.getPhotosFav(requete.params.id_filtre);
@@ -131,7 +135,7 @@ exports.affichage_favori = async (requete, reponse) => {
             listeBuff.push([id_pose, img, fav]);
         }
 
-        reponse.render('photos/photos_fav.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff })
+        reponse.render('photos/photos_fav.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idFiltre: requete.params.id_filtre, listeBuff, idCategorie: idCategorie[0].id_categorie })
     })
         .catch(error => {
             console.log(error);

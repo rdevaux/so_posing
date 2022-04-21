@@ -18,8 +18,9 @@ exports.affichage_filtres = async (requete, reponse) => {
 
         let Categories = require('../models/categories.model')(db, config);
         let nomSousCategorie = await Categories.getNomSousCategorie(requete.params.id);
+        let idCategorie = await Categories.getIdCategorie(requete.params.id);
 
-        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id })
+        reponse.render('photos/photos.pug', { listeFiltre, nomSousCategorie: nomSousCategorie[0].nom_sous_categorie, idSousCategorie: requete.params.id, idCategorie: idCategorie[0].id_categorie })
     })
         .catch(error => {
             console.log(error);
